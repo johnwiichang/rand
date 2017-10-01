@@ -1,6 +1,6 @@
 # rand
 
-**Rand** package generates fast, cryptographic random numbers using the [RDRAND](https://en.wikipedia.org/wiki/RdRand) instruction. Some argue that RDRAND is cryptographically compromised by National Security Agency using an unknown backdoor. On the other hand, using the instruction is ~3x faster than *crypto/rand* (on a Mac using go test benchmark).
+**Rand** package generates fast, cryptographic random numbers using the [RDRAND](https://en.wikipedia.org/wiki/RdRand) instruction. Some argue that RDRAND is cryptographically compromised by National Security Agency using an unknown backdoor. On the other hand, using the instruction is ~3x faster than *crypto/rand* (on a Mac 3.5GHz i7 using go test benchmark).
 
 The package accesses assembly instructions via C-go C wrapper.
 
@@ -23,7 +23,7 @@ The package accesses assembly instructions via C-go C wrapper.
     }
 
 ## Performance Results
-### Mac OSX
+### Mac OSX High Sierra, iMac 3.5GHz I7 (laste 2013)
 * crypto/rand, 1000 bytes: 63779 ns/op
 * crypto/rand, 8 bytes: 592   ns/op
 * math/rand, 8 bytes: 6.10 ns/op
